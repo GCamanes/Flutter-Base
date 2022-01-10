@@ -1,0 +1,14 @@
+{
+  "common": {
+    "genders": {
+      "female": "Female",
+      "male": "Male",
+      "other": "Other"
+    },
+    "hello": "Hi {firstName}",
+    "no": "No",
+    "ok": "Ok",
+    "welcome": "Welcome",
+    "yes": "Yes"
+  }
+}
