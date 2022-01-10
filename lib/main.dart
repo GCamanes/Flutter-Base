@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_base/core/config/config_holder.dart';
 import 'package:flutter_base/core/constants/app_constants.dart';
+import 'package:flutter_base/core/helpers/version_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -85,6 +86,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               ConfigHolder().config.baseApiUrl,
             ),
+            FutureBuilder<String>(
+              future: VersionHelper.getAppVersion(),
+              builder: (
+                BuildContext context,
+                AsyncSnapshot<dynamic> snapshot,
+              ) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasData) {
+                    return Text(snapshot.data);
+                  }
+                }
+                return const SizedBox();
+              },
+              // other arguments
+            )
           ],
         ),
       ),
