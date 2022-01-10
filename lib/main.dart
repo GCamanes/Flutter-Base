@@ -83,6 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('common.hello'.tr(
+              namedArgs: <String, String>{
+                'firstName': ConfigHolder().config.flavor
+              },
+            )),
             Text(
               ConfigHolder().config.baseApiUrl,
             ),

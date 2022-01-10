@@ -1,23 +1,27 @@
+import 'package:flutter_base/core/constants/app_constants.dart';
+
 class ConfigEntity {
   ConfigEntity({
-    required this.isProd,
+    required this.flavor,
     required this.baseApiUrl,
   });
 
   factory ConfigEntity.dev() {
     return ConfigEntity(
-      isProd : false,
+      flavor: AppConstants.flavorDev,
       baseApiUrl: 'https://api-dev.base.com/',
     );
   }
 
   factory ConfigEntity.prod() {
     return ConfigEntity(
-      isProd : true,
+      flavor: AppConstants.flavorProd,
       baseApiUrl: 'https://api-prod.base.com/',
     );
   }
 
-  final bool isProd;
+  final String flavor;
   final String baseApiUrl;
+
+  bool get isProd => flavor == AppConstants.flavorProd;
 }
