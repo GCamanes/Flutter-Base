@@ -38,6 +38,9 @@ dependencies:
   # https://pub.dev/packages/easy_localization
   easy_localization: ^3.0.0
 
+  # https://pub.dev/packages/package_info
+  package_info: ^2.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

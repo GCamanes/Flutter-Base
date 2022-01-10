@@ -1,15 +1,20 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_base/core/config/config_holder.dart';
+import 'package:flutter_base/core/constants/app_constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
+  String? flavor =
+      await const MethodChannel('flavor').invokeMethod<String>('getFlavor');
+
+  ConfigHolder().initialize(flavor);
+
   runApp(EasyLocalization(
-    supportedLocales: const <Locale>[
-      Locale('en'),
-      Locale('fr'),
-    ],
+    supportedLocales: AppConstants.supportedLocales,
     useOnlyLangCode: true,
     path: 'assets/locales',
     fallbackLocale: const Locale('en'),
@@ -78,9 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'common.hello'.tr(
-                namedArgs: <String, String>{'firstName': 'Guillaume'},
-              ),
+              ConfigHolder().config.baseApiUrl,
             ),
           ],
         ),
