@@ -114,3 +114,10 @@ following:
    select the new target and select ```Build Settings```tab. Do a research of ```bundle```
    In ```Packaging``` open ```Product Bundle Identifier``` and edit the value for each
    configuration.
+
+8) To Allow Flutter to know the flavor within the app, you need to specify it in Xcode.
+   Select ```Runner``` project, in TARGETS select the new target and select ```Build Settings```tab.
+   Do a research of ```APP_FLAVOR```
+   For each configuration, specify the name of the flavor (attention to dev and prod) as following:
+
+<img src="./assets/readme/target-flavor-flutter.png" width="624" height="193"/>

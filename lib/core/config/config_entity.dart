@@ -6,16 +6,16 @@ class ConfigEntity {
     required this.baseApiUrl,
   });
 
-  factory ConfigEntity.dev() {
+  factory ConfigEntity.dev({String flavor = ''}) {
     return ConfigEntity(
-      flavor: AppConstants.flavorDev,
+      flavor: flavor,
       baseApiUrl: 'https://api-dev.base.com/',
     );
   }
 
-  factory ConfigEntity.prod() {
+  factory ConfigEntity.prod({String flavor = ''}) {
     return ConfigEntity(
-      flavor: AppConstants.flavorProd,
+      flavor: flavor,
       baseApiUrl: 'https://api-prod.base.com/',
     );
   }
@@ -23,5 +23,5 @@ class ConfigEntity {
   final String flavor;
   final String baseApiUrl;
 
-  bool get isProd => flavor == AppConstants.flavorProd;
+  bool get isProd => flavor.contains(AppConstants.flavorProdKey);
 }

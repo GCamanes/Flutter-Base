@@ -23,10 +23,10 @@ class ConfigHolder extends ConfigHolderBase {
   }
 
   void initialize(String? flavor) {
-    if ((flavor ?? '').contains(AppConstants.flavorProd)) {
-      config = ConfigEntity.prod();
+    if ((flavor ?? '').contains(AppConstants.flavorProdKey)) {
+      config = ConfigEntity.prod(flavor: flavor!);
     } else {
-      config = ConfigEntity.dev();
+      config = ConfigEntity.dev(flavor: flavor!);
     }
   }
 

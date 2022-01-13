@@ -821,7 +821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C6A279085AC00063B46 /* Debug-prodbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = prod;
+				APP_FLAVOR = prodbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -844,7 +844,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C6D279085B800063B46 /* Debug-devbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = dev;
+				APP_FLAVOR = devbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -867,7 +867,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C70279085C700063B46 /* Release-prodbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = prod;
+				APP_FLAVOR = prodbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -889,7 +889,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = dev;
+				APP_FLAVOR = devbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -911,7 +911,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C70279085C700063B46 /* Release-prodbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = prod;
+				APP_FLAVOR = prodbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -933,7 +933,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = dev;
+				APP_FLAVOR = devbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1033,7 +1033,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C6A279085AC00063B46 /* Debug-prodbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = prod;
+				APP_FLAVOR = prodbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1134,7 +1134,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C6D279085B800063B46 /* Debug-devbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = dev;
+				APP_FLAVOR = devbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1231,7 +1231,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C70279085C700063B46 /* Release-prodbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = prod;
+				APP_FLAVOR = prodbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1327,7 +1327,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = dev;
+				APP_FLAVOR = devbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1421,7 +1421,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C70279085C700063B46 /* Release-prodbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = prod;
+				APP_FLAVOR = prodbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1515,7 +1515,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
-				APP_FLAVOR = dev;
+				APP_FLAVOR = devbis;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";

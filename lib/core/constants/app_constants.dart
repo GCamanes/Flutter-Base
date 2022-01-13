@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 abstract class AppConstants {
   // Flavors
-  static const String flavorDev = 'dev';
-  static const String flavorProd = 'prod';
+  static const String flavorDevKey = 'dev';
+  static const String flavorProdKey = 'prod';
 
   // Localization
   static const List<Locale> supportedLocales = <Locale>[
