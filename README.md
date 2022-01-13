@@ -120,4 +120,4 @@ following:
    Do a research of ```APP_FLAVOR```
    For each configuration, specify the name of the flavor (attention to dev and prod) as following:
 
-<img src="./assets/readme/target-flavor-flutter.png" width="624" height="193"/>
+<img src="./assets/readme/target-flavor-flutter.png" width="624" height="312"/>
