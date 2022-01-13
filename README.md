@@ -102,13 +102,13 @@ following:
    another one according to what you selected before for prod flavor). Ensure that the scheme is
    linked to the correct target and and correct configurations
 
-<img src="./assets/readme/runner-configs-targets.png" width="624" height="193"/>
+<img src="./assets/readme/runner-scheme-target-configs.png" width="624" height="193"/>
 
 6) Now duplicate the previous scheme to create the dev scheme of the app and named
    it ```devbisbis``` (or another one according to what you selected before for prod flavor)
    Ensure again that the scheme in linked correctly to target and configs
 
-<img src="./assets/readme/runner-configs-targets-dev.png" width="624" height="193"/>
+<img src="./assets/readme/runner-scheme-target-configs-dev.png" width="624" height="193"/>
 
 7) Now you can edit the bundle id of the new app. In Xcode, select ```Runner``` project, in TARGETS
    select the new target and select ```Build Settings```tab. Do a research of ```bundle```
