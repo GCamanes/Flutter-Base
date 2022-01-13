@@ -13,7 +13,7 @@ abstract class ConfigHolderBase {
   }
 }
 
-class ConfigHolder extends ConfigHolderBase{
+class ConfigHolder extends ConfigHolderBase {
   factory ConfigHolder() {
     return _instance;
   }
@@ -23,12 +23,10 @@ class ConfigHolder extends ConfigHolderBase{
   }
 
   void initialize(String? flavor) {
-    switch(flavor) {
-      case AppConstants.flavorProd:
-        config = ConfigEntity.prod();
-        break;
-      default:
-        config = ConfigEntity.dev();
+    if ((flavor ?? '').contains(AppConstants.flavorProd)) {
+      config = ConfigEntity.prod();
+    } else {
+      config = ConfigEntity.dev();
     }
   }
 

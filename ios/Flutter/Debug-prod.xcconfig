@@ -2,4 +2,4 @@
 #include "Generated.xcconfig"
 
 // the name displayed below the app icon on the home screen
-app_display_name=Flutter Base
+app_display_name=Flavor1

@@ -64,12 +64,26 @@ android {
             dimension "app"
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
-            resValue "string", "app_name", "Base App Dev"
+            resValue "string", "app_name", "Flavor1 Dev"
         }
 
         prod {
             dimension "app"
-            resValue "string", "app_name", "Base App"
+            resValue "string", "app_name", "Flavor1"
+        }
+
+        devbis {
+            dimension "app"
+            applicationId "com.example.flutterbasebis"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            resValue "string", "app_name", "Flavor2 Dev"
+        }
+
+        prodbis {
+            dimension "app"
+            applicationId "com.example.flutterbasebis"
+            resValue "string", "app_name", "Flavor2"
         }
     }
 }
