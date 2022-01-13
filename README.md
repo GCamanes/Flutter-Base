@@ -121,3 +121,45 @@ following:
    For each configuration, specify the name of the flavor (attention to dev and prod) as following:
 
 <img src="./assets/readme/target-flavor-flutter.png" width="624" height="312"/>
+
+### Adding icons to new app
+
+For this part we used the flutter
+plugins [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) and
+this [website](https://dev.to/stack-labs/flutter-flavors-launcher-icons-made-simple-336j).
+
+1. After adding this plugin in dev dependencies, create specific files as following (according to
+   flavor name):
+
+<img src="./assets/readme/icon-flavor-files-yaml.png" width="280" height="80"/>
+
+Inspire yourself from the existing file in the project.
+
+2. Create png files with dimensions 1024 x 1024 pixels in the asset folder as following:
+
+<img src="./assets/readme/icon-flavor-files.png" width="200" height="120"/>
+
+3. For android there is a little bug that can be fixed easily and temporary for the icon creation.
+   Change just this lines in ```android/app/build.gradle```
+
+<p float="left">
+   <img src="./assets/readme/icon-android-line-to-change.png" width="400" height="170"/>
+   <img src="./assets/readme/icon-android-tmp-fix.png" width="470" height="170"/>
+</p>
+
+4. Run the following command:
+
+```
+flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons*
+```
+
+This will generate all files for android and iOS.
+
+5. For iOS you need to check that icons are linked to the correct configuration. In Xcode,
+   select ```Runner``` project, in TARGETS select the new target and select ```Build Settings```tab.
+   Do a research of ```asset```. For each target, check all association between config and icon.
+   See the following example:
+
+<img src="./assets/readme/xcode-flavor-icon-check.png" width="500" height="290"/>
+
+6. Revert change on the file ```android/app/build.gradle```
