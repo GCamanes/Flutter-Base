@@ -48,6 +48,11 @@
 	</array>
 	<key>App - Flavor</key>
 	<string>$(APP_FLAVOR)</string>
+	<key>App - Values</key>
+	<dict>
+		<key>apiUrl</key>
+		<string>$(api_url)</string>
+	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

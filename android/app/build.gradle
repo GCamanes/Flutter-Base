@@ -65,11 +65,13 @@ android {
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
             resValue "string", "app_name", "Flavor1 Dev"
+            resValue "string", "apiUrl", "https://flavorone.com.dev"
         }
 
         prod {
             dimension "app"
             resValue "string", "app_name", "Flavor1"
+            resValue "string", "apiUrl", "https://flavorone.com"
         }
 
         devbis {
@@ -78,12 +80,14 @@ android {
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
             resValue "string", "app_name", "Flavor2 Dev"
+            resValue "string", "apiUrl", "https://flavortwo.com.dev"
         }
 
         prodbis {
             dimension "app"
             applicationId "com.example.flutterbasebis"
             resValue "string", "app_name", "Flavor2"
+            resValue "string", "apiUrl", "https://flavortwo.com"
         }
     }
 }

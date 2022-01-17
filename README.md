@@ -25,6 +25,52 @@ Links used to add app and flavors to project
 
 On Android we used kotlin flavors and on iOS we used schemes and targets.
 
+### Flavor variables
+
+Flavors can be used to create different apps. It can also be used to define app variables with
+different value for each of these apps.
+
+The principle is to define variables on native side and access it from Flutter side.
+
+#### Adding variable : Android
+
+You have to open the ```app/build.gradle``` file and add a line in each flavor as following:
+
+```
+resValue "VAR_TYPE", "VAR_KEY", "VAR_VALUE"
+```
+
+You can check this project to see the example with the variable ```apiUrl```. That's all for
+Android.
+
+You can also check the ```MainActivity.kt``` to see how the native channel is built.
+
+#### Adding variable : iOS
+
+1. Edit each ```xcconfigs``` file in ```iOS/Flutter``` to add a new variable with a value according
+   to the linked flavor (config variable named ```api_Url``` in our example).
+
+2. In xCode, edit each ```plist``` files (one per target) by adding a key (here ```apiUrl``` ), a
+   type and a value. Here we get the value from ```xcconfig``` files.
+
+<img src="./assets/readme/runner-configs-targets.png" width="500" height="283"/>
+
+You can check the association between Target and config by going to ```Build Settings``` tab
+and ```User-Defined``` section. You should see the variable from ```xcconfig``` files (```api_url```
+in our example) and its value for each config.
+
+All new variables need to be added under the ```App - Values``` in ```plist``` files to be reachable
+from flutter by the native channel we created. Check ```AppDelegate.swift``` to see how the native
+channel is built.
+
+#### Using native values from Flutter
+
+In each Android and iOS project, we created a channel named ```appValues```. From it, we can call
+method as variable name (here ```apiUrl``` ).
+
+With this we just need to create a method that call this channel with the method (variable name) to
+get the value of interest. You can check the channel helper create in ```lib/core/helpers```.
+
 ### Adding new app
 
 Here we presents all steps to add a new working app to the project.
@@ -94,13 +140,13 @@ Profile-devbisbis
 Profile-prodbisbis
 ```
 
-Now ensure that for each new configuration, each target is linked to the correct xconfig as
+Now ensure that for each new configuration, each target is linked to the correct xcconfig as
 following:
 <img src="./assets/readme/runner-configs-targets.png" width="500" height="466"/>
 
 5.Now we need to edit schemes. Rename the scheme linked to the new target as ```prodbisbis``` (or
-   another one according to what you selected before for prod flavor). Ensure that the scheme is
-   linked to the correct target and and correct configurations
+another one according to what you selected before for prod flavor). Ensure that the scheme is linked
+to the correct target and and correct configurations
 
 <img src="./assets/readme/runner-scheme-target-configs.png" width="624" height="193"/>
 
@@ -157,8 +203,8 @@ This will generate all files for android and iOS.
 
 5. For iOS you need to check that icons are linked to the correct configuration. In Xcode,
    select ```Runner``` project, in TARGETS select the new target and select ```Build Settings```tab.
-   Do a research of ```asset```. For each target, check all association between config and icon.
-   See the following example:
+   Do a research of ```asset```. For each target, check all association between config and icon. See
+   the following example:
 
 <img src="./assets/readme/xcode-flavor-icon-check.png" width="500" height="290"/>
 

@@ -18,14 +18,13 @@
 		3D8B8C57279083FE00063B46 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		3D8B8C58279083FE00063B46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		3D8B8C5A279083FE00063B46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
-		3D8B8C682790858900063B46 /* RunnerBis.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C672790858900063B46 /* RunnerBis.plist */; };
-		3D8B8C692790858900063B46 /* RunnerBis.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C672790858900063B46 /* RunnerBis.plist */; };
 		3D8B8C6C279085AC00063B46 /* Debug-prodbis.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C6A279085AC00063B46 /* Debug-prodbis.xcconfig */; };
 		3D8B8C6F279085B800063B46 /* Debug-devbis.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C6D279085B800063B46 /* Debug-devbis.xcconfig */; };
 		3D8B8C72279085C700063B46 /* Release-prodbis.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C70279085C700063B46 /* Release-prodbis.xcconfig */; };
 		3D8B8C75279085D200063B46 /* Release-devbis.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */; };
 		3D8B8C882790A14C00063B46 /* Debug-prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9740EEB21CF90195004384FC /* Debug-prod.xcconfig */; };
 		3D8B8C892790A15800063B46 /* Release-prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA3C8E1D35360C0083082E /* Release-prod.xcconfig */; };
+		3D8B8C8F2795FED100063B46 /* RunnerBis.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B8C672790858900063B46 /* RunnerBis.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -314,13 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D8B8C56279083FE00063B46 /* LaunchScreen.storyboard in Resources */,
-				3D8B8C692790858900063B46 /* RunnerBis.plist in Resources */,
 				3D8B8C57279083FE00063B46 /* AppFrameworkInfo.plist in Resources */,
 				3D8B8C72279085C700063B46 /* Release-prodbis.xcconfig in Resources */,
 				3D8B8C6C279085AC00063B46 /* Debug-prodbis.xcconfig in Resources */,
 				3D8B8C58279083FE00063B46 /* Assets.xcassets in Resources */,
 				3D8B8C75279085D200063B46 /* Release-devbis.xcconfig in Resources */,
 				3D8B8C6F279085B800063B46 /* Debug-devbis.xcconfig in Resources */,
+				3D8B8C8F2795FED100063B46 /* RunnerBis.plist in Resources */,
 				3D8B8C5A279083FE00063B46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +330,6 @@
 			files = (
 				3D451116278C6CA500F0AF06 /* Release-dev.xcconfig in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
-				3D8B8C682790858900063B46 /* RunnerBis.plist in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				3D8B8C882790A14C00063B46 /* Debug-prod.xcconfig in Resources */,
 				3D8B8C892790A15800063B46 /* Release-prod.xcconfig in Resources */,
@@ -845,7 +843,7 @@
 			baseConfigurationReference = 3D8B8C6D279085B800063B46 /* Debug-devbis.xcconfig */;
 			buildSettings = {
 				APP_FLAVOR = devbis;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-devbis;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-devbis";
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
@@ -890,7 +888,7 @@
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
 				APP_FLAVOR = devbis;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-devbis;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-devbis";
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
@@ -934,7 +932,7 @@
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
 				APP_FLAVOR = devbis;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-devbis;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-devbis";
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
@@ -1135,7 +1133,7 @@
 			baseConfigurationReference = 3D8B8C6D279085B800063B46 /* Debug-devbis.xcconfig */;
 			buildSettings = {
 				APP_FLAVOR = devbis;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-devbis;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-devbis";
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
@@ -1328,7 +1326,7 @@
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
 				APP_FLAVOR = devbis;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-devbis;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-devbis";
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
@@ -1516,7 +1514,7 @@
 			baseConfigurationReference = 3D8B8C73279085D200063B46 /* Release-devbis.xcconfig */;
 			buildSettings = {
 				APP_FLAVOR = devbis;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-devbis;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-devbis";
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;

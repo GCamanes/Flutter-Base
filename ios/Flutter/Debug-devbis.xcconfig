@@ -5,3 +5,6 @@
 bundle_suffix=.dev
 // the name displayed below the app icon on the home screen
 app_display_name=Flavor2 Dev
+
+// define some values needed for each flavor
+api_url=https:/$()/flavortwo.com.dev

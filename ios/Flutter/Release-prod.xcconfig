@@ -3,3 +3,6 @@
 
 // the name displayed below the app icon on the home screen
 app_display_name=Flavor1
+
+// define some values needed for each flavor
+api_url=https:/$()/flavorone.com

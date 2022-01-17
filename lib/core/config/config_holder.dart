@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/core/config/config_entity.dart';
-import 'package:flutter_base/core/constants/app_constants.dart';
+import 'package:flutter_base/core/helpers/channel_helper.dart';
 
 abstract class ConfigHolderBase {
   @protected
@@ -18,17 +18,21 @@ class ConfigHolder extends ConfigHolderBase {
     return _instance;
   }
 
-  ConfigHolder._internal() {
-    currentConfig = ConfigEntity.dev();
+  ConfigHolder._default() {
+    currentConfig = ConfigEntity(
+      flavor: 'none',
+      baseApiUrl: '',
+    );
   }
 
-  void initialize(String? flavor) {
-    if ((flavor ?? '').contains(AppConstants.flavorProdKey)) {
-      config = ConfigEntity.prod(flavor: flavor!);
-    } else {
-      config = ConfigEntity.dev(flavor: flavor!);
-    }
+  Future<void> initialize() async {
+    String? flavor = await ChannelHelper.getFlavor();
+    String? apiUrl = await ChannelHelper.getApiUrl();
+    currentConfig = ConfigEntity(
+      flavor: flavor ?? '',
+      baseApiUrl: apiUrl ?? '',
+    );
   }
 
-  static final ConfigHolder _instance = ConfigHolder._internal();
+  static final ConfigHolder _instance = ConfigHolder._default();
 }
