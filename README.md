@@ -53,7 +53,7 @@ You can also check the ```MainActivity.kt``` to see how the native channel is bu
 2. In xCode, edit each ```plist``` files (one per target) by adding a key (here ```apiUrl``` ), a
    type and a value. Here we get the value from ```xcconfig``` files.
 
-<img src="./assets/readme/runner-configs-targets.png" width="500" height="283"/>
+<img src="./assets/readme/xcode-plist-app-value.png" width="500" height="283"/>
 
 You can check the association between Target and config by going to ```Build Settings``` tab
 and ```User-Defined``` section. You should see the variable from ```xcconfig``` files (```api_url```
