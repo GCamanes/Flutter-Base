@@ -1,15 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base/core/config/config_holder.dart';
+import 'package:flutter_base/core/constants/app_constants.dart';
+import 'package:flutter_base/core/helpers/version_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
+  await ConfigHolder().initialize();
+
   runApp(EasyLocalization(
-    supportedLocales: const <Locale>[
-      Locale('en'),
-      Locale('fr'),
-    ],
+    supportedLocales: AppConstants.supportedLocales,
     useOnlyLangCode: true,
     path: 'assets/locales',
     fallbackLocale: const Locale('en'),
@@ -77,11 +79,29 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('common.hello'.tr(
+              namedArgs: <String, String>{
+                'firstName': ConfigHolder().config.flavor
+              },
+            )),
             Text(
-              'common.hello'.tr(
-                namedArgs: <String, String>{'firstName': 'Guillaume'},
-              ),
+              ConfigHolder().config.baseApiUrl,
             ),
+            FutureBuilder<String>(
+              future: VersionHelper.getAppVersion(),
+              builder: (
+                BuildContext context,
+                AsyncSnapshot<dynamic> snapshot,
+              ) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasData) {
+                    return Text(snapshot.data);
+                  }
+                }
+                return const SizedBox();
+              },
+              // other arguments
+            )
           ],
         ),
       ),

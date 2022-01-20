@@ -43,7 +43,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.flutter_base"
+        applicationId "com.example.flutterbase"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
@@ -55,6 +55,39 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "app"
+    productFlavors {
+        dev {
+            dimension "app"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            resValue "string", "app_name", "Flavor1 Dev"
+            resValue "string", "apiUrl", "https://flavorone.com.dev"
+        }
+
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "Flavor1"
+            resValue "string", "apiUrl", "https://flavorone.com"
+        }
+
+        devbis {
+            dimension "app"
+            applicationId "com.example.flutterbasebis"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            resValue "string", "app_name", "Flavor2 Dev"
+            resValue "string", "apiUrl", "https://flavortwo.com.dev"
+        }
+
+        prodbis {
+            dimension "app"
+            applicationId "com.example.flutterbasebis"
+            resValue "string", "app_name", "Flavor2"
+            resValue "string", "apiUrl", "https://flavortwo.com"
         }
     }
 }
