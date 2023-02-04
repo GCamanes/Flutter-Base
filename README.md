@@ -12,9 +12,8 @@ flutter run --flavor dev
 flutter run --flavor prod
 ```
 
-## Getting Started
+## Android fix
 
-### Android history
 There's a little bug starting with flutter ```3.7.1``` linked to android build, see [solution here](https://stackoverflow.com/a/75320787).
 
 We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper/gradle-wrapper.properties```.
@@ -33,7 +32,7 @@ Each flavor is defined by its name and some customizable values:
 ### Android
 
 1) Flavors declaration
-The ```android/app/gradle``` was edited to add dev and prod flavors with their config values.
+The ```android/app/build.gradle``` was edited to add dev and prod flavors with their config values.
 
 2) Channels
 ```MainActivity.kt``` was edited to add channels and method to retrieve value from native on Flutter side.
