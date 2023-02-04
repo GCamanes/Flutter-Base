@@ -62,7 +62,7 @@ Here you should see some values (```api_url```, ```app_name```, ```bundle_suffix
 
 <img src="./assets/readme/flavors_ios_add_user_defined.png" width="750" height="138"/>
 
-<img src="./assets/readme/flavors_ios_app_flavors_values.png" width="750" height="556"/>
+<img src="./assets/readme/flavors_ios_user_defined_values.png" width="750" height="556"/>
 
 6) Add entries to ```Info.plist``` in Xcode:
 - ```App - values``` as a dictionary with key ```api_url``` linked to ```$(api_url)```
