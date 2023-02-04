@@ -48,7 +48,7 @@ For iOS platform it's a bit more complex to add flavor because iOS works with sc
 
 2) Create configurations Debug/Release/Profile in Runner (Project part in Xcode)
 
-<img src="./assets/readme/flavors_ios_runner_configurations.png" width="500" height="283"/>
+<img src="./assets/readme/flavors_ios_runner_configurations.png" width="750" height="553"/>
 
 3) Create dev and prod schemes that use linked configurations defined before
 
