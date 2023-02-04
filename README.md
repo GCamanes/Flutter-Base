@@ -58,19 +58,17 @@ Don't forget to set scheme to shared and they must have the same name than flavo
 
 Here you should see some values (```api_url```, ```app_name```, ```bundle_suffix```) based on configurations.
 
-<img src="./assets/readme/flavors_ios_user_defined.png" width="500" height="283"/>
-
 5) Add a ```User-Defined``` named ```app_flavor``` to store flavor value for each configurations
 
-<img src="./assets/readme/flavors_ios_user_defined.png" width="500" height="283"/>
+<img src="./assets/readme/flavors_ios_add_user_defined.png" width="750" height="138"/>
 
-<img src="./assets/readme/flavors_ios_app_flavors_values" width="500" height="283"/>
+<img src="./assets/readme/flavors_ios_app_flavors_values" width="750" height="556"/>
 
 6) Add entries to ```Info.plist``` in Xcode:
 - ```App - values``` as a dictionary with key ```api_url``` linked to ```$(api_url)```
 - ```App - flavor``` as a String with value ```$(api_flavor)```
 
-<img src="./assets/readme/flavors_ios_info_plist.png" width="500" height="283"/>
+<img src="./assets/readme/flavors_ios_info_plist.png" width="750" height="76"/>
 
 7) Edit ```Bundle display name``` in ```Info.plist``` to value ```$(app_name)```
 
@@ -82,5 +80,5 @@ Here you should see some values (```api_url```, ```app_name```, ```bundle_suffix
 - set general value to ```com.your.bundle(bundle_suffix)```
 - you'll see that each configuration as the bundle suffix if defined before
 
-<img src="./assets/readme/flavors_ios_bundle_identifier.png" width="500" height="283"/>
+<img src="./assets/readme/flavors_ios_bundle_identifier.png" width="750" height="185"/>
 
