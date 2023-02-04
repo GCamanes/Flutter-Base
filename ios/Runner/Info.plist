@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Flutter Base</string>
+	<string>$(app_name)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -47,5 +47,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>App - values</key>
+	<dict>
+		<key>apiUrl</key>
+		<string>$(api_url)</string>
+	</dict>
+	<key>App - flavor</key>
+	<string>$(app_flavor)</string>
 </dict>
 </plist>

@@ -1,0 +1,8 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+// the name displayed below the app icon on the home screen
+app_name=Base Prod
+
+// define some values needed for each flavor
+api_url=https:/$()/base.api

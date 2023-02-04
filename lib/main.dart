@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/core/config/config.holder.dart';
 
 Future<void> _initProject() async {
+  /// This line is mandatory to access method channel before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
   await ConfigHolder().initialize();
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: !ConfigHolder().config.isProd,
       theme: ThemeData(
         // This is the theme of your application.
         //

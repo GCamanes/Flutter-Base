@@ -68,13 +68,13 @@ android {
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
             resValue "string", "app_name", "Base Dev"
-            resValue "string", "apiUrl", "https://flavorone.api.dev"
+            resValue "string", "apiUrl", "https://base.api.dev"
         }
 
         prod {
             dimension "app"
             resValue "string", "app_name", "Base Prod"
-            resValue "string", "apiUrl", "https://flavorone.api"
+            resValue "string", "apiUrl", "https://base.api"
         }
     }
 }
