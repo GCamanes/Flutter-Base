@@ -9,6 +9,6 @@ Base is build on:
 ## Getting Started
 
 # Android history
-There's a little bug starting with flutter ```3.7.1``` linked to android build, see [solution here](https://stackoverflow.com/a/75320787).
+There's a little bug starting with flutter ```3.7.1``` linked to android build, see [solution here](https://stackoverflow.com/a/75320787){:target="_blank" rel="noopener"}.
 
 We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper/gradle-wrapper.properties```.
