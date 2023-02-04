@@ -1,16 +1,14 @@
-# flutter_base
+# Flutter Base
 
-A new Flutter project.
+This project aimed to be the base of any new Flutter porject.
+
+Base is build on:
+    - flutter bloc
+    - clean architecture
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+# Android history
+There's a little bug starting with flutter ```3.7.1``` linked to android build, see [solution here]('https://github.com/flutter/flutter/issues/100756#issuecomment-1078988954')
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper/gradle-wrapper.properties```.
