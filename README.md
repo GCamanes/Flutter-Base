@@ -22,11 +22,13 @@ We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper
 ## Flavors
 
 This project consider two flavors running on both android ans iOS side: 
-- dev
-- prod
+- ```dev```
+- ```prod```
 
 Each flavor is defined by its name and some customizable values:
-- api url : to get api base url from native conf
+- ```api url``` : to get api base url from native conf
+- ```app name``` : to specify app display name
+- ```bundle suffix``` : to differentiate dev and prod app
 
 ### Android
 
@@ -53,9 +55,9 @@ For iOS platform it's a bit more complex to add flavor because iOS works with sc
 
 Don't forget to set scheme to shared and they must have the same name than flavors.
 
-5) Check ```User-Defined``` values in ```Targets => Runner => Build Settings => User-defined```
+5) Check ```User-Defined``` values in ```Targets``` => ```Runner``` => ```Build Settings``` => ```User-defined```
 
-Here you should see some values (```api_url, app_name, bundle_suffix```) based on configurations.
+Here you should see some values (```api_url```, ```app_name```, ```bundle_suffix```) based on configurations.
 
 <img src="./assets/readme/flavors_ios_user_defined.png" width="500" height="283"/>
 
@@ -77,7 +79,7 @@ Here you should see some values (```api_url, app_name, bundle_suffix```) based o
 ```AppDelegate.swift``` was edited to add channels and method to retrieve value from native on Flutter side.
 
 9) Edit bundle suffix
-- go to ```Targets => Runner => Build Settings => Packaging => Product Bundle Identifier```
+- go to ```Targets``` => ```Runner``` => ```Build Settings``` => ```Packaging``` => ```Product Bundle Identifier```
 - set general value to ```com.your.bundle(bundle_suffix)```
 - you'll see that each configuration as the bundle suffix if defined before
 
