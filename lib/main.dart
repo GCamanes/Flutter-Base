@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/core/config/config.holder.dart';
 
-void main() {
+Future<void> _initProject() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await ConfigHolder().initialize();
+}
+
+void main() async {
+  await _initProject();
+
   runApp(const MyApp());
 }
 
@@ -24,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Base ${ConfigHolder().config.flavor}'),
     );
   }
 }
@@ -95,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(ConfigHolder().config.baseApiUrl),
             const Text(
               'You have pushed the button this many times:',
             ),
