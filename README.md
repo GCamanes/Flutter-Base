@@ -29,6 +29,10 @@ Each flavor is defined by its name and some customizable values:
 - ```app name``` : to specify app display name
 - ```bundle suffix``` : to differentiate dev and prod app
 
+Useful links:
+- [https://www.chwe.at/2020/10/flutter-flavors/]
+- [https://blog.svenadolph.net/flutter-flavors-and-ios-schemes/]
+
 ### Android
 
 1) Flavors declaration
