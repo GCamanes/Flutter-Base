@@ -34,7 +34,7 @@ In this app, ```BLoC``` (Business Logic Component) pattern is used as state mana
 
 This pattern aim to extract logic from UI by defining it in a component called ```Cubit``` (or Bloc in the original pattern). See how Cubit works:
 
-<img src="./assets/readme/cubit_architecture_full.png" width="750" height="188"/>
+<img src="./assets/readme/cubit_architecture_full.png" width="750" height="200"/>
 
 Each Cubit have a state (containing or not data) that will change over time.
 UI can listen to this changes and adapt according to current state.
