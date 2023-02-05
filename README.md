@@ -61,6 +61,10 @@ Each type can have multiple states:
 
 <img src="./assets/readme/cubit_state_changes.png" width="750" height="411"/>
 
+For each cubit, there is two files linked to it:
+- ```example.cubit.state.dart```: containing custom states of this cubit
+- ```example.cubit.dart```: defining the cubit and its behavior
+
 ## Flavors
 
 This project consider two flavors running on both android ans iOS side: 
