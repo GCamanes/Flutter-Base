@@ -11,5 +11,6 @@
   "login": "Se connecter",
   "logout": "Se déconnecter",
   "retry": "Réessayer",
-  "next": "Continuer"
+  "next": "Continuer",
+  "data": "Donnée"
 }

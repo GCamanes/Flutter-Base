@@ -11,5 +11,6 @@
   "login": "Login",
   "logout": "Logout",
   "retry": "Retry",
-  "next": "Continue"
+  "next": "Continue",
+  "data": "Data"
 }

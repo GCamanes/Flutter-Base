@@ -4,6 +4,7 @@ import 'package:flutter_base/core/presentation/cubit/app_life_cycle_cubit.dart';
 import 'package:flutter_base/core/presentation/cubit/custom.cubit.dart';
 import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
 import 'package:flutter_base/core/presentation/cubit/localization.cubit.dart';
+import 'package:flutter_base/features/splashscreen/presentation/cubit/assets.cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppCubitsProvider extends StatelessWidget {
@@ -20,6 +21,9 @@ class AppCubitsProvider extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: <BlocProvider<CustomCubit<CubitState>>>[
+        BlocProvider<AssetsCubit>(
+          create: (BuildContext context) => AssetsCubit(),
+        ),
         BlocProvider<AppLifeCycleCubit>(
           create: (BuildContext context) => AppLifeCycleCubit(),
         ),
