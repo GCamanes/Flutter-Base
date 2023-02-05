@@ -1,0 +1,15 @@
+{
+  "welcome": "Bienvenue",
+  "home": "Accueil",
+  "settings": "Paramètres",
+  "languages": "Langages",
+  "location": "Localisation",
+  "en": "Anglais",
+  "fr": "Français",
+  "email": "Email",
+  "password": "Mot de passe",
+  "login": "Se connecter",
+  "logout": "Se déconnecter",
+  "retry": "Réessayer",
+  "next": "Continuer"
+}

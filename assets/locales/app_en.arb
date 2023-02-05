@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome",
+  "home": "Home",
+  "settings": "Settings",
+  "languages": "Languages",
+  "location": "Location",
+  "en": "English",
+  "fr": "French",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "logout": "Logout",
+  "retry": "Retry",
+  "next": "Continue"
+}

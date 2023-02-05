@@ -1,42 +1,93 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_base/core/config/config.holder.dart';
+import 'package:flutter_base/core/extensions/context.extension.dart';
+import 'package:flutter_base/core/presentation/cubit/app_life_cycle_cubit.dart';
+import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubit/localization.cubit.dart';
+import 'package:flutter_base/core/presentation/cubit/localization.cubit.state.dart';
+import 'package:flutter_base/core/presentation/widget/cubit/app_cubits.listener.dart';
+import 'package:flutter_base/core/presentation/widget/cubit/app_cubits.provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+/// Locale that will be used to init ConfigHolder instance and LocalizationCubit
+late Locale initialLocale;
 
 Future<void> _initProject() async {
   /// This line is mandatory to access method channel before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
-  await ConfigHolder().initialize();
+  String defaultLocaleName = Platform.localeName;
+  if (defaultLocaleName.contains('_')) {
+    defaultLocaleName = defaultLocaleName.split('_').first;
+  }
+  initialLocale = Locale(defaultLocaleName);
+
+  await ConfigHolder().initialize(initialLocale);
 }
 
 void main() async {
   await _initProject();
 
-  runApp(const MyApp());
+  runApp(
+    AppCubitsProvider(
+      initialLocale: initialLocale,
+      builder: (BuildContext context) => const AppCubitsListener(
+        child: MyApp(),
+      ),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addObserver(this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  Future<void> didChangeAppLifecycleState(AppLifecycleState state) async {
+    /// Listening to app state in cas ewe need to do something in specific cases
+    if (state == AppLifecycleState.paused ||
+        state == AppLifecycleState.inactive) {
+      BlocProvider.of<AppLifeCycleCubit>(context).enterBackground();
+    } else if (state == AppLifecycleState.resumed) {
+      BlocProvider.of<AppLifeCycleCubit>(context).enterForeground();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: !ConfigHolder().config.isProd,
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Base ${ConfigHolder().config.flavor}'),
-    );
+    return BlocBuilder<LocalizationCubit, CubitState>(
+        builder: (BuildContext context, CubitState state) {
+      return MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: !ConfigHolder().config.isProd,
+        locale: (state as LocalizationState).locale,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyHomePage(title: 'Flutter Base ${ConfigHolder().config.flavor}'),
+      );
+    });
   }
 }
 
@@ -106,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(ConfigHolder().config.baseApiUrl),
+            Text(context.trad.welcome),
             const Text(
               'You have pushed the button this many times:',
             ),

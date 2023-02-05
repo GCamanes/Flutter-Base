@@ -18,6 +18,12 @@ There's a little bug starting with flutter ```3.7.1``` linked to android build, 
 
 We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper/gradle-wrapper.properties```.
 
+## Localization
+
+For localization, the following link was used:
+
+https://docs.flutter.dev/development/accessibility-and-localization/internationalization
+
 ## Flavors
 
 This project consider two flavors running on both android ans iOS side: 
