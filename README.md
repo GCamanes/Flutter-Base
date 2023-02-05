@@ -26,7 +26,17 @@ https://docs.flutter.dev/development/accessibility-and-localization/internationa
 
 In this app, localization is handled by using a custom LocalizationCubit (see [state management](#state-management-with-cubit) part).
 
-This way we can update MaterialApp locale (case with context) and ConfigHolder locale (case without context).
+This way we can update MaterialApp locale (case with context) and [ConfigHolder](#app-config) locale (case without context).
+
+## App config
+
+All info needed at the start of the app is loaded from native side and store in a ```ConfigHolder```.
+
+This holder is a singleton that can be reached from anywhere in the app, and is defined in ````/lib/core/config````.
+
+It can store info like flavor key, api base url, and other.
+
+It also store the current locale if its needed where context of the app is not reachable.
 
 ## State management with Cubit
 
