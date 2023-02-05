@@ -24,7 +24,7 @@ For localization, the following link was used:
 
 https://docs.flutter.dev/development/accessibility-and-localization/internationalization
 
-In this app, localization is handled by using a custom LocalizationCubit (see [state management part](## State management : Cubit) below).
+In this app, localization is handled by using a custom LocalizationCubit (see [state management part](#state-management-:-cubit) below).
 
 This way we can update MaterialApp locale (case with context) and ConfigHolder locale (case without context).
 
