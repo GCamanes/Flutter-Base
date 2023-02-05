@@ -28,17 +28,17 @@ https://docs.flutter.dev/development/accessibility-and-localization/internationa
 
 In this app, ```BLoC``` (Business Logic Component) pattern is used as state management via [flutter_bloc](https://pub.dev/packages/flutter_bloc) which extends it.
 
-This pattern aim is to extract logic from UI by defining it in a component called ```Cubit``` (or Bloc in the original pattern). See below how Cubit works:
+This pattern aim to extract logic from UI by defining it in a component called ```Cubit``` (or Bloc in the original pattern). See below how Cubit works:
 
 <img src="./assets/readme/cubit_architecture_full.png" width="750" height="188"/>
 
-Each Cubit have a state (containing or not data) that will change in time.
+Each Cubit have a state (containing or not data) that will change over time.
 UI can listen to this changes and adapt according to current state.
 So we can say that ```UI = f (state)```.
 
 When creating a Cubit, you can differentiate two different type:
 - ```storage```: load and store some data (ex: get a list of assets)
-- ```treatment```: perform an action and give the result to another cubit (ex: add a new assets to the list)
+- ```treatment```: perform an action and give the result to another cubit (ex: add a new asset to the list and get the updated list)
 
 Each type can have multiple states:
 - ```loading```: action is not finished
