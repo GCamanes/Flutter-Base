@@ -9,4 +9,19 @@ abstract class AppConstants {
 
   /// General keys
   static const String flavorProdKey = 'prod';
+
+  /// Languages
+  static const String localeEn = 'en';
+  static const String localeFr = 'fr';
+
+  /// Api Errors
+  // 401
+  static const String apiErrorInvalidCredentialsKey = 'INVALID_CREDENTIALS';
+  static const String apiErrorUnauthorizedKey = 'UNAUTHORIZED';
+
+  // 500
+  static const String apiErrorInternalServerErrorKey = 'INTERNAL_SERVER_ERROR';
+  static const String timeOutErrorKey = 'TIME_OUT_ERROR';
+  static const String connectivityErrorKey = 'CONNECTIVITY_ERROR';
+  static const String unknownErrorKey = 'UNKNOWN_ERROR';
 }

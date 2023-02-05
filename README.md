@@ -18,6 +18,53 @@ There's a little bug starting with flutter ```3.7.1``` linked to android build, 
 
 We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper/gradle-wrapper.properties```.
 
+## Localization
+
+For localization, the following link was used:
+
+https://docs.flutter.dev/development/accessibility-and-localization/internationalization
+
+In this app, localization is handled by using a custom LocalizationCubit (see [state management](#state-management-with-cubit) part).
+
+This way we can update MaterialApp locale (case with context) and [ConfigHolder](#app-config) locale (case without context).
+
+## App config
+
+All info needed at the start of the app is loaded from native side and store in a ```ConfigHolder```.
+
+This holder is a singleton that can be reached from anywhere in the app, and is defined in ````/lib/core/config````.
+
+It can store info like flavor key, api base url, and other.
+
+It also store the current locale if its needed where context of the app is not reachable.
+
+## State management with Cubit
+
+In this app, ```BLoC``` (Business Logic Component) pattern is used as state management via [flutter_bloc](https://pub.dev/packages/flutter_bloc) which extends it.
+
+This pattern aim to extract logic from UI by defining it in a component called ```Cubit``` (or Bloc in the original pattern). See how Cubit works:
+
+<img src="./assets/readme/cubit_architecture_full.png" width="750" height="200"/>
+
+Each Cubit have a state (containing or not data) that will change over time.
+UI can listen to this changes and adapt according to current state.
+So we can say that ```UI = f (state)```.
+
+When creating a Cubit, you can differentiate two different type:
+- ```storage```: load and store some data (ex: get a list of assets)
+- ```treatment```: perform an action and give the result to another cubit (ex: add a new asset to the list and get the updated list)
+
+Each type can have multiple states:
+- ```loading```: action is not finished
+- ```loaded```: action is finished and data is stored
+- ```error```: action is finished and error is stored
+
+<img src="./assets/readme/cubit_state_changes.png" width="750" height="411"/>
+
+For each cubit, there is two files linked to it:
+- ```example.cubit.state.dart```: containing custom states of this cubit
+- ```example.cubit.dart```: defining the cubit and its behavior
+
 ## Flavors
 
 This project consider two flavors running on both android ans iOS side: 
@@ -30,8 +77,8 @@ Each flavor is defined by its name and some customizable values:
 - ```bundle suffix``` : to differentiate dev and prod app
 
 Useful links:
-- [https://www.chwe.at/2020/10/flutter-flavors/]
-- [https://blog.svenadolph.net/flutter-flavors-and-ios-schemes/]
+- https://www.chwe.at/2020/10/flutter-flavors/
+- https://blog.svenadolph.net/flutter-flavors-and-ios-schemes/
 
 ### Android
 
