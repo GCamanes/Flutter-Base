@@ -24,15 +24,15 @@ For localization, the following link was used:
 
 https://docs.flutter.dev/development/accessibility-and-localization/internationalization
 
-In this app, localization is handled by using a custom LocalizationCubit (see [state management part](#state-management-:-cubit) below).
+In this app, localization is handled by using a custom LocalizationCubit (see [state management](#state-management-with-cubit) part).
 
 This way we can update MaterialApp locale (case with context) and ConfigHolder locale (case without context).
 
-## State management : Cubit
+## State management with Cubit
 
 In this app, ```BLoC``` (Business Logic Component) pattern is used as state management via [flutter_bloc](https://pub.dev/packages/flutter_bloc) which extends it.
 
-This pattern aim to extract logic from UI by defining it in a component called ```Cubit``` (or Bloc in the original pattern). See below how Cubit works:
+This pattern aim to extract logic from UI by defining it in a component called ```Cubit``` (or Bloc in the original pattern). See how Cubit works:
 
 <img src="./assets/readme/cubit_architecture_full.png" width="750" height="188"/>
 
