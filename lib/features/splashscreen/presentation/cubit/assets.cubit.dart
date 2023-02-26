@@ -6,8 +6,10 @@ class AssetsCubit extends CustomCubit<CubitState> {
   AssetsCubit() : super(CubitInitState());
 
   Future<void> getAssets() async {
+    print('GET ASSETS');
     emit(AssetsLoadingState());
     await Future<void>.delayed(const Duration(seconds: 2));
     emit(AssetsLoadedState(const <String>[]));
+    print('GOT ASSETS');
   }
 }

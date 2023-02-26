@@ -14,6 +14,10 @@ abstract class AppConstants {
   static const String localeEn = 'en';
   static const String localeFr = 'fr';
 
+  /// MDB API
+  static const String mdbAuthenticatePath = '/authenticate';
+  static const String mdbRefreshPath = '/refresh';
+
   /// Api Errors
   // 401
   static const String apiErrorInvalidCredentialsKey = 'INVALID_CREDENTIALS';

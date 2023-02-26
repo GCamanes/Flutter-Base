@@ -12,11 +12,28 @@ flutter run --flavor dev
 flutter run --flavor prod
 ```
 
+This project use fvm to handle flutter version.
+So use ```fvm flutter``` command instead of ```flutter``` when cleaning, adding plugins, build, etc.
+
 ## Android fix
 
 There's a little bug starting with flutter ```3.7.1``` linked to android build, see [solution here](https://stackoverflow.com/a/75320787).
 
 We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper/gradle-wrapper.properties```.
+
+## Generated files
+
+In this app we use [get_it](https://pub.dev/packages/get_it) combined with [injectable](https://pub.dev/packages/injectable) and [injectable_generator](https://pub.dev/packages/injectable_generator) to handle dependencies injection.
+
+Files concerned by dependencies injection:
+- singleton (classes with injectable @singleton)
+
+To generate the dependencies injection file, run this command each time changes are made:
+```
+fvm flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+It will generate a file called ```get_it.injector.config.dart``` in the ```\lib``` directory.
 
 ## Localization
 

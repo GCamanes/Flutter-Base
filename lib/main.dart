@@ -9,6 +9,7 @@ import 'package:flutter_base/core/presentation/cubit/localization.cubit.state.da
 import 'package:flutter_base/core/presentation/widget/cubit/app_cubits.listener.dart';
 import 'package:flutter_base/core/presentation/widget/cubit/app_cubits.provider.dart';
 import 'package:flutter_base/features/splashscreen/presentation/pages/splashscreen.page.dart';
+import 'package:flutter_base/get_it.injector.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -16,16 +17,21 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 late Locale initialLocale;
 
 Future<void> _initProject() async {
-  /// This line is mandatory to access method channel before runApp()
-  WidgetsFlutterBinding.ensureInitialized();
-
+  /// Manage locale
   String defaultLocaleName = Platform.localeName;
   if (defaultLocaleName.contains('_')) {
     defaultLocaleName = defaultLocaleName.split('_').first;
   }
   initialLocale = Locale(defaultLocaleName);
 
+  /// This line is mandatory to access method channel before runApp()
+  WidgetsFlutterBinding.ensureInitialized();
+
+  /// Initialize config holder for the whole app
   await ConfigHolder().initialize(initialLocale);
+
+  /// Init get it dependencies
+  configureDependencies();
 }
 
 void main() async {

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_base/core/errors/failure.dart';
+import 'package:flutter_base/core/domain/entities/failure.entity.dart';
 
 /// Custom abstract class to define generic state for all cubits
 abstract class CubitState extends Equatable {
@@ -16,7 +16,7 @@ class CubitInitState extends CubitState {}
 class CubitErrorState extends CubitState {
   CubitErrorState(this.failure);
 
-  final Failure failure;
+  final FailureEntity failure;
 
   @override
   List<Object> get props => <Object>[
