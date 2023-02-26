@@ -15,6 +15,7 @@ void main() {
   late AuthRemoteDataSourceImpl authRemoteDataSource;
   String email = 'email';
   String password = 'password';
+  String refreshToken = 'refreshToken';
 
   setUp(() {
     dataSource = MockAppDataSource();
@@ -61,6 +62,49 @@ void main() {
           email: email,
           password: password,
         ),
+        throwsA(isA<Exception>()),
+      );
+    });
+
+    test('Success refresh case', () async {
+      final Map<String, dynamic> json =
+          await TestResourcesHelper.getSessionJson();
+
+      when(
+        () => dataSource.get(
+          '${AppConstants.remoteAuthenticatePath}'
+          '${AppConstants.remoteRefreshPath}'
+          '?token=$refreshToken',
+          options: any(named: 'options'),
+        ),
+      ).thenAnswer(
+        (_) async => Response<dynamic>(
+          requestOptions: RequestOptions(),
+          data: json,
+        ),
+      );
+
+      final dynamic response = await authRemoteDataSource.refresh(
+        refreshToken: refreshToken,
+      );
+
+      expect(response.runtimeType, SessionModel);
+    });
+
+    test('Error refresh case', () async {
+      when(
+        () => dataSource.get(
+          '${AppConstants.remoteAuthenticatePath}'
+          '${AppConstants.remoteRefreshPath}'
+          '?token=$refreshToken',
+          options: any(named: 'options'),
+        ),
+      ).thenAnswer(
+        (_) async => throw Exception(),
+      );
+
+      expect(
+        authRemoteDataSource.refresh(refreshToken: refreshToken),
         throwsA(isA<Exception>()),
       );
     });
