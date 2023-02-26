@@ -1,4 +1,4 @@
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.state.dart';
 
 class HomeLoadingState extends CubitState {}
 

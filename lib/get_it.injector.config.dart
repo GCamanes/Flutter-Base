@@ -19,7 +19,7 @@ import 'package:flutter_base/features/auth/domain/use_cases/authenticate.use_cas
     as _i9;
 import 'package:flutter_base/features/auth/domain/use_cases/refresh.use_case.dart'
     as _i10;
-import 'package:flutter_base/features/auth/presentation/cubit/auth.cubit.dart'
+import 'package:flutter_base/features/auth/presentation/cubits/auth.cubit.dart'
     as _i11;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;

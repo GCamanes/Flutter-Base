@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_base/core/domain/entities/failure.entity.dart';
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.dart';
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.state.dart';
 import 'package:flutter_base/features/auth/domain/entities/session.entity.dart';
 import 'package:flutter_base/features/auth/domain/use_cases/authenticate.use_case.dart';
-import 'package:flutter_base/features/auth/presentation/cubit/auth.cubit.state.dart';
+import 'package:flutter_base/features/auth/presentation/cubits/auth.cubit.state.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton

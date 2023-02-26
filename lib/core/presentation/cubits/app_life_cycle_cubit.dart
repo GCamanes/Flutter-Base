@@ -1,6 +1,6 @@
-import 'package:flutter_base/core/presentation/cubit/app_life_cycle_cubit.state.dart';
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.dart';
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubits/app_life_cycle_cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.state.dart';
 
 class AppLifeCycleCubit extends CustomCubit<CubitState> {
   AppLifeCycleCubit() : super(ForegroundState(Duration.zero));

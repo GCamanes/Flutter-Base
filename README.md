@@ -15,6 +15,58 @@ flutter run --flavor prod
 This project use fvm to handle flutter version.
 So use ```fvm flutter``` command instead of ```flutter``` when cleaning, adding plugins, build, etc.
 
+## Clean architecture
+
+This project is built with clean architecture.
+
+<img src="./assets/readme//clean_archi_feature.png" alt="Clean archi feature" height="400" />
+
+Each feature has a structure as follow:
+```
+|-- data
+|   |-- datasources
+|   |   |-- exemple.remote_datasource.dart
+|   |   `-- example.remote_datasource.impl.dart
+|   |-- models
+|   |   `-- example.model.dart
+|   `-- repositories
+|       `-- example.repository.impl.dart
+|-- domain
+|   |-- entities
+|   |   `-- example.entity.dart
+|   |-- repositories
+|   |   `-- example.repository.dart
+|   `-- use_cases
+|       |-- example.use_case.dart
+`-- presentation
+    `-- cubits
+        |-- example.cubit.dart
+        `-- example.state.dart
+    `-- pages
+        `-- example.page.dart
+    `-- widgets
+        `-- example.widget.dart
+```
+
+### Data sources
+
+In this part we have:
+- models : used to construct class instance from any source and usable by dart code + extends an entity
+- remote data sources (interface/impl) : used to get data from any sources (remote, local etc)
+- repository (impl) : used to get that and handle any response case (failure or success)
+
+### Domain
+In this part we have:
+- entity : class instance holding data used every where in the app, can contain specific functions
+- repository (interface) : interface for feature repository
+- use case : used to do a single task related to a repository (can only call execute method)
+
+### Presentation
+In this part we have:
+- cubit : used to do any business logic call
+- page : any page linked to the feature
+- widget : any widget used in any page of the feature
+
 ## Android fix
 
 There's a little bug starting with flutter ```3.7.1``` linked to android build, see [solution here](https://stackoverflow.com/a/75320787).

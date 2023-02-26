@@ -7,7 +7,7 @@ import 'package:flutter_base/core/domain/entities/failure.entity.dart';
 import 'package:flutter_base/core/utils/app.constants.dart';
 import 'package:flutter_base/features/auth/domain/entities/session.entity.dart';
 import 'package:flutter_base/features/auth/domain/use_cases/refresh.use_case.dart';
-import 'package:flutter_base/features/auth/presentation/cubit/auth.cubit.dart';
+import 'package:flutter_base/features/auth/presentation/cubits/auth.cubit.dart';
 import 'package:flutter_base/get_it.injector.dart';
 
 class MdbInterceptor extends DioInterceptor {

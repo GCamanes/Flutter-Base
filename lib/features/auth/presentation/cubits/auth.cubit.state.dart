@@ -1,5 +1,5 @@
 import 'package:flutter_base/core/domain/entities/failure.entity.dart';
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.state.dart';
 import 'package:flutter_base/features/auth/domain/entities/session.entity.dart';
 
 class AuthLoadingState extends CubitState {}

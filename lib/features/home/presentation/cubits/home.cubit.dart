@@ -1,6 +1,6 @@
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.dart';
-import 'package:flutter_base/core/presentation/cubit/custom.cubit.state.dart';
-import 'package:flutter_base/features/home/presentation/cubit/home.cubit.state.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.dart';
+import 'package:flutter_base/core/presentation/cubits/custom.cubit.state.dart';
+import 'package:flutter_base/features/home/presentation/cubits/home.cubit.state.dart';
 
 class HomeCubit extends CustomCubit<CubitState> {
   HomeCubit() : super(CubitInitState());
