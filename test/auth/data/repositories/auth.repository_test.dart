@@ -7,7 +7,7 @@ import 'package:flutter_base/features/auth/domain/entities/session.entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../test_resources/test_resources.helper.dart';
+import '../../../test_resources/test_resources.helper.dart';
 
 class MockAuthDataSource extends Mock implements AuthRemoteDataSource {}
 

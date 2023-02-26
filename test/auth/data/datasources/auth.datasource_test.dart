@@ -6,7 +6,7 @@ import 'package:flutter_base/features/auth/data/models/session.model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../test_resources/test_resources.helper.dart';
+import '../../../test_resources/test_resources.helper.dart';
 
 class MockAppDataSource extends Mock implements AppDataSource {}
 
