@@ -65,5 +65,25 @@ void main() {
       ],
       tearDown: () => expect(authCubit.state, isA<AuthOutState>()),
     );
+
+    blocTest(
+      'emits [AuthInState] in case of auth refresh',
+      build: () => authCubit,
+      act: (AuthCubit bloc) => bloc.refreshSession(session),
+      expect: () => <TypeMatcher<CubitState>>[
+        isA<AuthInState>(),
+      ],
+      tearDown: () => expect(authCubit.state, isA<AuthInState>()),
+    );
+
+    blocTest(
+      'emits [AuthOutState] in case of auth clear',
+      build: () => authCubit,
+      act: (AuthCubit bloc) => bloc.clear(),
+      expect: () => <TypeMatcher<CubitState>>[
+        isA<AuthOutState>(),
+      ],
+      tearDown: () => expect(authCubit.state, isA<AuthOutState>()),
+    );
   });
 }
