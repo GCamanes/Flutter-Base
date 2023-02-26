@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_base/core/data/datasources/app.datasource.dart';
+import 'package:flutter_base/core/utils/app.constants.dart';
 import 'package:flutter_base/features/auth/data/datasources/auth.remote_datasource.impl.dart';
 import 'package:flutter_base/features/auth/data/models/session.model.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -27,7 +28,7 @@ void main() {
 
       when(
         () => dataSource.get(
-          any(),
+          AppConstants.remoteAuthenticatePath,
           options: any(named: 'options'),
         ),
       ).thenAnswer(
@@ -43,6 +44,25 @@ void main() {
       );
 
       expect(response.runtimeType, SessionModel);
+    });
+
+    test('Error auth case', () async {
+      when(
+        () => dataSource.get(
+          AppConstants.remoteAuthenticatePath,
+          options: any(named: 'options'),
+        ),
+      ).thenAnswer(
+        (_) async => throw Exception(),
+      );
+
+      expect(
+        authRemoteDataSource.authenticate(
+          email: email,
+          password: password,
+        ),
+        throwsA(isA<Exception>()),
+      );
     });
   });
 }
