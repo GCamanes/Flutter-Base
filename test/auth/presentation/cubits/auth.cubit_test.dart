@@ -85,5 +85,23 @@ void main() {
       ],
       tearDown: () => expect(authCubit.state, isA<AuthOutState>()),
     );
+
+    test(
+      'currentSession should return SessionEntity when AuthInState',
+      () async {
+        authCubit.refreshSession(session);
+
+        expect(authCubit.currentSession, isA<SessionEntity>());
+      },
+    );
+
+    test(
+      'currentSession should return SessionEntity when AuthOutState',
+      () async {
+        authCubit.clear();
+
+        expect(authCubit.currentSession, null);
+      },
+    );
   });
 }
