@@ -13,12 +13,17 @@ abstract class CustomCubit<State> extends Cubit<State> {
     if (!isClosed && !ConfigHolder().config.isProd) {
       String str = 'EVENT $runtimeType -- ${state.toString()}';
       log(str);
-      super.emit(state);
     }
+    super.emit(state);
   }
 
-  /*@override
+  @override
   Future<void> close() async {
+    /// Override to log info on cubit state only for dev flavor
+    if (!ConfigHolder().config.isProd) {
+      String str = 'CLOSE $runtimeType -- ${state.toString()}';
+      log(str);
+    }
     super.close();
-  }*/
+  }
 }

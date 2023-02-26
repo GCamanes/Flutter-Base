@@ -15,7 +15,6 @@ class SplashscreenPage extends StatefulWidget {
 class _SplashscreenPageState extends State<SplashscreenPage> {
   @override
   void initState() {
-    print('INIT');
     _getAssets();
     super.initState();
   }
@@ -33,7 +32,6 @@ class _SplashscreenPageState extends State<SplashscreenPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<AssetsCubit, CubitState>(
       builder: (BuildContext context, CubitState state) {
-        print('BUILDER $state');
         return Scaffold(
           body: Center(
             child: (state is CubitErrorState)
@@ -43,7 +41,6 @@ class _SplashscreenPageState extends State<SplashscreenPage> {
         );
       },
       listener: (BuildContext context, CubitState state) {
-        print('LISTENER $state');
         if (state is AssetsLoadedState) {
           _goToNextPage();
         }
