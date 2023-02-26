@@ -23,7 +23,7 @@ void main() {
   });
 
   group('Test: Auth remote data source', () {
-    test('Success auth case', () async {
+    test('Success datasource auth case', () async {
       final Map<String, dynamic> json =
           await TestResourcesHelper.getSessionJson();
 
@@ -47,7 +47,7 @@ void main() {
       expect(response.runtimeType, SessionModel);
     });
 
-    test('Error auth case', () async {
+    test('Error datasource auth case', () async {
       when(
         () => dataSource.get(
           AppConstants.remoteAuthenticatePath,
@@ -66,7 +66,7 @@ void main() {
       );
     });
 
-    test('Success refresh case', () async {
+    test('Success datasource refresh case', () async {
       final Map<String, dynamic> json =
           await TestResourcesHelper.getSessionJson();
 
@@ -91,7 +91,7 @@ void main() {
       expect(response.runtimeType, SessionModel);
     });
 
-    test('Error refresh case', () async {
+    test('Error datasource refresh case', () async {
       when(
         () => dataSource.get(
           '${AppConstants.remoteAuthenticatePath}'
