@@ -51,21 +51,21 @@ Each feature has a structure as follow:
 ### Data sources
 
 In this part we have:
-- models : used to construct class instance from any source and usable by dart code + extends an entity
-- remote data sources (interface/impl) : used to get data from any sources (remote, local etc)
-- repository (impl) : used to get that and handle any response case (failure or success)
+- ```models``` : used to construct class instance from any source and usable by dart code + extends an entity
+- ```remote data sources (interface/impl)``` : used to get data from any sources (remote, local etc)
+- ```repository (impl)``` : used to get that and handle any response case (failure or success)
 
 ### Domain
 In this part we have:
-- entity : class instance holding data used every where in the app, can contain specific functions
-- repository (interface) : interface for feature repository
-- use case : used to do a single task related to a repository (can only call execute method)
+- ```entity``` : class instance holding data used every where in the app, can contain specific functions
+- ```repository``` (interface) : interface for feature repository
+- ```use case``` : used to do a single task related to a repository (can only call execute method)
 
 ### Presentation
 In this part we have:
-- cubit : used to do any business logic call
-- page : any page linked to the feature
-- widget : any widget used in any page of the feature
+- ```cubit``` : used to do any business logic call
+- ```page``` : any page linked to the feature
+- ```widget``` : any widget used in any page of the feature
 
 ## Android fix
 
