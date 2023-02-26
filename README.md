@@ -78,7 +78,7 @@ We needed to change gradle version from 7.5 to 7.6 in ```android/graddle/wrapper
 In this app we use [get_it](https://pub.dev/packages/get_it) combined with [injectable](https://pub.dev/packages/injectable) and [injectable_generator](https://pub.dev/packages/injectable_generator) to handle dependencies injection.
 
 Files concerned by dependencies injection:
-- singleton (classes with injectable @singleton)
+- singleton (classes with injectable @singleton tag)
 
 To generate the dependencies injection file, run this command each time changes are made:
 ```
