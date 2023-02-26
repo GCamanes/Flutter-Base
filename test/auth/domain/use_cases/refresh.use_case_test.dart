@@ -14,8 +14,6 @@ class MockAuthRepository extends Mock implements AuthRepository {}
 void main() {
   late MockAuthRepository repo;
   late RefreshUseCase useCase;
-  String email = 'email';
-  String password = 'password';
   String refreshToken = 'refreshToken';
 
   setUp(() {
