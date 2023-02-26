@@ -15,8 +15,8 @@ abstract class AppConstants {
   static const String localeFr = 'fr';
 
   /// MDB API
-  static const String mdbAuthenticatePath = '/authenticate';
-  static const String mdbRefreshPath = '/refresh';
+  static const String remoteAuthenticatePath = '/authenticate';
+  static const String remoteRefreshPath = '/refresh';
 
   /// Api Errors
   // 401

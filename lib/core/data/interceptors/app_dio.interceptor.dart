@@ -10,7 +10,7 @@ import 'package:flutter_base/features/auth/domain/use_cases/refresh.use_case.dar
 import 'package:flutter_base/features/auth/presentation/cubits/auth.cubit.dart';
 import 'package:flutter_base/get_it.injector.dart';
 
-class MdbInterceptor extends DioInterceptor {
+class AppDioInterceptor extends DioInterceptor {
   late AuthCubit _authCubit;
   late RefreshUseCase _refresh;
 
@@ -41,7 +41,7 @@ class MdbInterceptor extends DioInterceptor {
   ) async {
     /// If Token not expired then continue
     if (err.response?.statusCode != 401 ||
-        err.requestOptions.path.contains(AppConstants.mdbAuthenticatePath)) {
+        err.requestOptions.path.contains(AppConstants.remoteAuthenticatePath)) {
       return super.onError(err, handler);
     }
 

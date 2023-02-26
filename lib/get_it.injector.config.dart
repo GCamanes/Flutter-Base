@@ -5,8 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter_base/core/data/clients/mdb_dio.client.dart' as _i3;
-import 'package:flutter_base/core/data/datasources/mdb.datasource.dart' as _i4;
+import 'package:flutter_base/core/data/clients/app_dio.client.dart' as _i3;
+import 'package:flutter_base/core/data/datasources/app.datasource.dart' as _i4;
 import 'package:flutter_base/features/auth/data/datasources/auth.remote_datasource.dart'
     as _i5;
 import 'package:flutter_base/features/auth/data/datasources/auth.remote_datasource.impl.dart'
@@ -37,10 +37,10 @@ _i1.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
-  gh.singleton<_i3.MdbDioClient>(_i3.MdbDioClient());
-  gh.singleton<_i4.MdbDataSource>(_i4.MdbDataSource(gh<_i3.MdbDioClient>()));
+  gh.singleton<_i3.AppDioClient>(_i3.AppDioClient());
+  gh.singleton<_i4.AppDataSource>(_i4.AppDataSource(gh<_i3.AppDioClient>()));
   gh.singleton<_i5.AuthRemoteDataSource>(
-      _i6.AuthRemoteDataSourceImpl(gh<_i4.MdbDataSource>()));
+      _i6.AuthRemoteDataSourceImpl(gh<_i4.AppDataSource>()));
   gh.singleton<_i7.AuthRepository>(
       _i8.AuthRepositoryImpl(gh<_i5.AuthRemoteDataSource>()));
   gh.singleton<_i9.AuthenticateUseCase>(
