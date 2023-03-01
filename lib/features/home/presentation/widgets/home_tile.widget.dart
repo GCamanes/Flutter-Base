@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_base/core/extensions/context.extension.dart';
+import 'package:flutter_base/core/utils/app_router.helper.dart';
 import 'package:flutter_base/core/utils/ui.constants.dart';
 
 class HomeTileWidget extends StatelessWidget {
@@ -12,13 +11,14 @@ class HomeTileWidget extends StatelessWidget {
 
   final String title;
 
-  void _goToNext(BuildContext context) => log('Some action on tile $title');
+  void _goToNext(BuildContext context) => AppRouterHelper.goToDetail(title);
 
   @override
   Widget build(BuildContext context) {
     /// Main widget
     return GestureDetector(
       onTap: () => _goToNext(context),
+      behavior: HitTestBehavior.translucent,
       child: Container(
         padding: const EdgeInsets.all(UIConstants.innerPadding),
         height: 75,

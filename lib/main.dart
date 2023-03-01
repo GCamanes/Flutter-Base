@@ -8,7 +8,7 @@ import 'package:flutter_base/core/presentation/cubits/localization.cubit.dart';
 import 'package:flutter_base/core/presentation/cubits/localization.cubit.state.dart';
 import 'package:flutter_base/core/presentation/widget/cubits/app_cubits.listener.dart';
 import 'package:flutter_base/core/presentation/widget/cubits/app_cubits.provider.dart';
-import 'package:flutter_base/features/splashscreen/presentation/pages/splashscreen.page.dart';
+import 'package:flutter_base/core/utils/app_router.helper.dart';
 import 'package:flutter_base/get_it.injector.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return BlocBuilder<LocalizationCubit, CubitState>(
         builder: (BuildContext context, CubitState state) {
-      return MaterialApp(
+      return MaterialApp.router(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: !ConfigHolder().config.isProd,
         locale: (state as LocalizationState).locale,
@@ -91,7 +91,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const SplashscreenPage(),
+        routerConfig: AppRouterHelper.router,
       );
     });
   }

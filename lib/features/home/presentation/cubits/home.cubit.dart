@@ -10,15 +10,15 @@ class HomeCubit extends CustomCubit<CubitState> {
     await Future<void>.delayed(const Duration(seconds: 2));
     emit(HomeLoadedState(
       const <String>[
-        'Data 1',
-        'Data custom 1',
-        'Data Bonus 1',
-        'Data 2',
-        'Data custom 2',
-        'Data Bonus 2',
-        'Data 3',
-        'Data custom 3',
-        'Data Bonus 3',
+        'Data_1',
+        'Data_custom_1',
+        'Data_Bonus_1',
+        'Data_2',
+        'Data_custom_2',
+        'Data_Bonus_2',
+        'Data_3',
+        'Data_custom_3',
+        'Data_Bonus_3',
       ],
     ));
   }

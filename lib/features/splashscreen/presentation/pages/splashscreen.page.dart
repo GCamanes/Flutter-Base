@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/core/presentation/cubits/custom.cubit.state.dart';
-import 'package:flutter_base/features/home/presentation/pages/home.page.dart';
+import 'package:flutter_base/core/utils/app_router.helper.dart';
 import 'package:flutter_base/features/splashscreen/presentation/cubits/assets.cubit.dart';
 import 'package:flutter_base/features/splashscreen/presentation/cubits/assets.state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,12 +21,7 @@ class _SplashscreenPageState extends State<SplashscreenPage> {
 
   void _getAssets() => BlocProvider.of<AssetsCubit>(context).getAssets();
 
-  void _goToNextPage() => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute<dynamic>(
-          builder: (BuildContext context) => const HomePage(),
-        ),
-      );
+  void _goToNextPage() => AppRouterHelper.goToHome();
 
   @override
   Widget build(BuildContext context) {
